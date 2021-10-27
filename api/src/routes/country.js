@@ -13,15 +13,14 @@ router.get('/', async (req, res, next) => {
            return{
             id: el.cca3,
             name: el.name.common,
-            image: el.flags,
-            continent: el.continents,
+            flags: el.flags.png,
+            continent: el.continents ? el.continents[0] : 'Continents not found',
             capital: el.capital ? el.capital[0] : 'Capital not found',
-            subregion: el.subregion ? el.subregion [0] : 'Subregion not found',
+            subregion: el.subregion ? el.subregion : 'Subregion not found',
             area: el.area,
             population: el.population || 0
           }
         })
-        console.log(countryApi.data)
         res.send(filterCountryApi);
       }catch(error){
           next(error)
@@ -32,7 +31,7 @@ router.get('/', async (req, res, next) => {
 router.get('/', (req, res, next) =>{
     if(req.query.name){
         return Country.findAll({
-            attributes : ['flag', 'name', 'continent'],
+            attributes : ['flags', 'name', 'continent'],
             where:{
                 name:{
                 [op.ilike]:`%${req.query.name}%`
@@ -47,7 +46,7 @@ router.get('/', (req, res, next) =>{
         })
     }else{
         return Country.findAll({
-            attributes : ['flag', 'name', 'continent']
+            attributes : ['flags', 'name', 'continent']
         })
         .then(country => {
             res.send(country)
@@ -76,12 +75,11 @@ router.post('/', async (req, res, next) =>{
 });
 
 //relaciono una ciudad con sus actividades
-router.post('/:countryId/activity/:activityId', async (req, res, next) => {
+router.get('/:countryId/', async (req, res, next) => {
     try{
-        const {countryId, activityId} = req.params;
+        const {countryId} = req.params;
         const country = await Country.findByPk(countryId)
-        await country.addActivity(activityId)
-        res.send(200)
+        res.send(country)
     }catch(error){
         next(error)
     }
