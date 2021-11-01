@@ -28,7 +28,7 @@ const { conn, Country } = require('./src/db.js');
 conn.sync({ force: true }).then(async() => {
   try{
     let resDb = await Country.findAll()
-    if(resDb.length === 0){
+    if(resDb.length === 0) {
       try{
         let response = await axios.get('https://restcountries.com/v3.1/all')
         let api = response.data

@@ -33,35 +33,60 @@ router.get('/', (req, res, next) =>{
     }
 });
 
-router.get('/:countryId/', async (req, res, next) => {
+router.get('/:id/', async (req, res, next) => {
     try{
-        const {countryId} = req.params;
-        const country = await Country.findByPk(countryId)
+        const {id} = req.params;
+        const country = await Country.findByPk(id)
         res.send(country)
     }catch(error){
         next(error)
     }
 });
 
-// router.post('/', async (req, res, next) =>{
-//     try{
-//         const {name, image, continent, capital, subregion, area, population} = req.body;
-//         const newCountry = await Country.create({
-//             name, 
-//             image, 
-//             continent, 
-//             capital, 
-//             subregion, 
-//             area, 
-//             population
-//         })
-//         res.status(201).send(newCountry)
-//     }catch (error){
-//         next(error)
-//     }
-// });
+router.post('/', async (req, res, next) =>{
+    try{
+        const {name, flag, continent, capital, subregion, area, population, id} = req.body;
+        const newCountry = await Country.create({
+            id,
+            name, 
+            flag, 
+            continent, 
+            capital, 
+            subregion, 
+            area, 
+            population
+        })
+        res.status(201).send(newCountry)
+    }catch (error){
+        next(error)
+    }
+});
 
-//relaciono una ciudad con sus actividades
+router.get('/', (req, res, next) =>{
+    if(req.query.name){
+        return Country.findAll({
+            attributes : ['name', 'image', 'continent', 'capital', 'subregion', 'area', 'population'],
+            where:{
+                name: {
+                [Op.iLike]:`%${req.query.name}%`
+                }
+            }
+        })
+        .then(country => {
+            if(country.length === 0){
+                return res.send('Not country found')
+            }
+            res.send(country)
+        })
+    }else{
+        return Country.findAll({
+            attributes :  ['name', 'image', 'continent', 'capital', 'subregion', 'area', 'population']
+        })
+        .then(country => {
+            res.send(country)
+        })
+    }
+});
 
 
 module.exports = router;
