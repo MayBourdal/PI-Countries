@@ -1,7 +1,7 @@
 import { useDispatch } from 'react-redux'
 import { ASCENDING, DESCENDING } from '../const/sort'
 import { filterCountryByCountinent, sort } from '../store/action'
-
+import './order.css'
 
 
 export default function Order(){

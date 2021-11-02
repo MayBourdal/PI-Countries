@@ -1,0 +1,49 @@
+h1{
+    font-family: cursive;
+    text-align: start;
+    position: relative;
+    left: 80px;
+    font-size: 2em;
+    font-style: oblique;
+}
+
+.dream{
+    font-family:cursive;
+    font-size: 2em;
+    font-style: oblique;
+    text-align: start;
+    position: relative;
+    left: 160px;
+}
+
+h2{
+    font-family:cursive;
+    font-size: 1em;
+    font-style: oblique;
+    text-align: end;
+    position: relative;
+    right: 20px;
+    top: 300px
+}
+
+input{
+    
+  background-image: linear-gradient(to bottom, lightpink, lightskyblue);
+  border-radius: 28px;
+  text-shadow: 3px 2px 1px #9daef5;
+  box-shadow: 6px 5px 24px #666666;
+  font-family: cursive;
+  font-style: oblique;
+  font-size: 1.7em;
+  color: #fafafa;
+  padding: 27px;
+  right: 300px;
+  top: 250px;
+  position: absolute;
+}
+
+input:hover{
+    background-color: #008CBA;
+    color: white;
+}
+

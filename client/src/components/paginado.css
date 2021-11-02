@@ -1,0 +1,31 @@
+.paginacion {
+	margin:20px 0;
+}
+
+.paginacion ul {
+	list-style:none;
+	text-align: center;
+}
+
+.paginacion ul li {
+	display:inline-block;
+	margin-right:2px;
+}
+
+.paginacion ul li a {
+	display:block;
+	padding:10px 10px;
+	color:#fff;
+	background: peru;
+	text-decoration: none;
+    border-radius: 28px;
+}
+
+.paginacion ul li a:hover {
+	background:rgb(179, 153, 119);
+}
+
+.paginacion ul li .active {
+	background:lightskyblue;
+	font-weight:bold;
+}

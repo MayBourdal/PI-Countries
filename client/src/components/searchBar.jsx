@@ -1,6 +1,7 @@
 import {useState} from 'react'
 import { useDispatch } from 'react-redux'
 import {searchCountry} from '../store/action'
+import './searchBar.css'
 
 export default function SearchBar() {
     const [search, setSearch] = useState('')

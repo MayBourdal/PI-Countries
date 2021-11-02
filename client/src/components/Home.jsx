@@ -6,7 +6,7 @@ import { Link } from "react-router-dom"
 import Paginado from "./paginado"
 import SearchBar from "./searchBar"
 import Order from "./order"
-
+import './Home.css'
 
 
 export default function Home (){
@@ -32,12 +32,12 @@ export default function Home (){
     }
 
     
-    return ( <div>
-        <Link to ='/Home'>Home</Link>
+    return ( 
+    <div>
         <h1>Countries</h1>
         <SearchBar />
         <Order />
-        <button onClick={e => {handleOnclick(e)}}>go back to countries </button>
+        <button onClick={e => {handleOnclick(e)}}>All</button>
         {currentCountries?.map((country) => {
             return <Country key = {country.id} name={country.name} continent={country.continent} flag={country.flag}  />
         })}
