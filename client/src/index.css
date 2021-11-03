@@ -1,8 +1,11 @@
 body {
-  background-image: url(https://i.pinimg.com/originals/85/41/40/85414072fe21a5b1a534289cad925ab5.jpg);
+  background-image: url(https://www.econectia.com/uploads/noticias/1786/imagenes/Acceso-Internet-Global-Oneweb.jpg);
+  /* background-image: url(https://fotografias-compromiso.atresmedia.com/clipping/cmsimages02/2020/12/16/08AA1F5A-547D-497A-AED1-5108EC33AA32/58.jpg); */
+  /* background-image: url(https://d500.epimg.net/cincodias/imagenes/2021/07/25/companias/1627202972_504107_1627203139_noticia_normal_recorte1.jpg); */
   background-repeat: no-repeat;
-  background-position: center;
-  background-size:100% auto;
+  background-position: center center;
+  background-size: cover;
+  background-attachment: fixed;
 
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',

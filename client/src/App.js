@@ -13,7 +13,7 @@ function App() {
         <Route path='/add'>
           <AddActivities />
         </Route>
-        <Route path='/id'>
+        <Route path='/id/:id'>
           <CountryDetails />
         </Route>
         <Route path='/home'>

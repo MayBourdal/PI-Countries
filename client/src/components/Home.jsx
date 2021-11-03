@@ -2,11 +2,10 @@ import { useEffect, useState } from "react"
 import { useDispatch, useSelector } from "react-redux"
 import {fetchCountry} from '../store/action'
 import Country from "./country"
-import { Link } from "react-router-dom"
 import Paginado from "./paginado"
 import SearchBar from "./searchBar"
 import Order from "./order"
-import './Home.css'
+import style from './Home.module.css'
 
 
 export default function Home (){
@@ -39,7 +38,7 @@ export default function Home (){
         <Order />
         <button onClick={e => {handleOnclick(e)}}>All</button>
         {currentCountries?.map((country) => {
-            return <Country key = {country.id} name={country.name} continent={country.continent} flag={country.flag}  />
+            return <Country className={style.card} key = {country.id} name={country.name} continent={country.continent} flag={country.flag} id={country.id}/>
         })}
         <Paginado
         countriesPerPage = {countriesPerPage}

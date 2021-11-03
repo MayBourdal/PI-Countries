@@ -28,7 +28,7 @@ export default function reducer (state = initialState, action) {
                 if(a.name < b.name) {
                     return action.payload === ASCENDING ? -1 : 1
                 }
-                if(a.name > b.name){
+                if(a.name < b.name){
                     return action.payload === ASCENDING ? 1 : -1
                 }
                 return 0;
@@ -39,9 +39,10 @@ export default function reducer (state = initialState, action) {
             }
             case FILTER_COUNTRY_BY_CONTINENT:
                 const allCountries = [...state.countries]
-                const continentFilter = allCountries.filter(el => el.continents === action.payload)
-                console.log(continentFilter)
+                const continentFilter = allCountries.filter(el => el.continent == action.payload)
+                
                 console.log(allCountries)
+                
             return{
                 ...state,
                 filterCountries: continentFilter

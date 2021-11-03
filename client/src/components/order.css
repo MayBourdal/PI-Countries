@@ -1,6 +1,6 @@
 select{
     
-    background-image: linear-gradient(to bottom, peachpuff, peru);
+    background-image: linear-gradient(to bottom, rgb(18, 15, 247), #94d9ee);
     border-radius: 28px;
     text-shadow: 3px 2px 1px #9daef5;
     box-shadow: 6px 5px 24px #666666;
@@ -15,5 +15,5 @@ select{
   }
 
   select:hover{
-    background: rgb(179, 153, 119);
+    background: rgb(85, 130, 253);
   }

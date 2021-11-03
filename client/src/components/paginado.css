@@ -16,13 +16,13 @@
 	display:block;
 	padding:10px 10px;
 	color:#fff;
-	background: peru;
+	background: rgb(85, 18, 243);
 	text-decoration: none;
     border-radius: 28px;
 }
 
 .paginacion ul li a:hover {
-	background:rgb(179, 153, 119);
+	background:rgb(85, 130, 253)
 }
 
 .paginacion ul li .active {

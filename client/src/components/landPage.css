@@ -28,17 +28,17 @@ h2{
 
 input{
     
-  background-image: linear-gradient(to bottom, lightpink, lightskyblue);
+  background-image: linear-gradient(to bottom, #9daef5, lightskyblue);
   border-radius: 28px;
   text-shadow: 3px 2px 1px #9daef5;
   box-shadow: 6px 5px 24px #666666;
   font-family: cursive;
   font-style: oblique;
-  font-size: 1.7em;
+  font-size: 20em;
   color: #fafafa;
-  padding: 27px;
+  padding: 40px;
   right: 300px;
-  top: 250px;
+  top: 500px;
   position: absolute;
 }
 

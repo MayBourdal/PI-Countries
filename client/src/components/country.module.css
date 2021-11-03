@@ -1,0 +1,13 @@
+.card{
+    display: flex; /* Imprescindible */
+    width: 150px; /* Una longitud o auto */
+    height: 150px; /* Una longitud necesariamente */
+    justify-content: flex-start; /* X */
+    align-items: flex-start;
+}
+
+.img{
+    border-radius: 28px;
+    height: 100px;
+    width: 120px;
+}
