@@ -1,0 +1,59 @@
+.card{
+    overflow: hidden;
+    width: 882px;
+    background: content-box;
+    display: inline-flex;
+    justify-content: unset;
+    align-content: center;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: baseline;
+    font-size: x-large;
+    padding: 46px 46px 46px 46px;
+    margin: 27px 0px 24px 24px;
+    opacity: 0.9;
+    box-shadow: 4px 2px 24px #666697;
+    border-radius: 135xp;
+    cursor: grab;
+
+}
+
+.h1{
+    font-size: 4em;
+    color: peru;
+    margin-block: auto;
+    
+}
+
+.flag{
+    width: 382px;
+}
+
+.h3{
+    color: peru;
+    display: list-item;
+    margin-block-start: 0.5em;
+    margin-block-end: 0em;
+    margin-inline-start: 31px;
+    font-weight: bold;
+}
+
+.button{
+    border-radius: 28px;
+    text-shadow: 3px 2px 1px #9daef5;
+    box-shadow: 6px 5px 24px #666666;
+    font-family: cursive;
+    font-style: oblique;
+    font-size: 1em;
+    color: peru;
+    margin-block-start: 1.5em;
+    padding: 4px;    
+    background: local;
+
+  }
+
+  button:hover{
+    background-image: linear-gradient(to bottom, rgb(119, 119, 119), #121313);
+    font-weight:bold;
+  
+}

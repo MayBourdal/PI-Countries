@@ -1,6 +1,6 @@
 select{
     
-    background-image: linear-gradient(to bottom, rgb(18, 15, 247), #94d9ee);
+  background-image: linear-gradient(to bottom, rgb(119, 119, 119), #121313) ;
     border-radius: 28px;
     text-shadow: 3px 2px 1px #9daef5;
     box-shadow: 6px 5px 24px #666666;
@@ -16,4 +16,25 @@ select{
 
   select:hover{
     background: rgb(85, 130, 253);
+    font-weight:bold;
+  }
+
+option{
+  background-image: linear-gradient(to bottom, rgb(119, 119, 119), #121313) ;
+    border-radius: 28px;
+    text-shadow: 3px 2px 1px #9daef5;
+    box-shadow: 6px 5px 24px #666666;
+    font-family: cursive;
+    font-style: oblique;
+    font-size: 1em;
+    color: #fafafa;
+    padding: 4px;
+    right: 300px;
+    top: 250px;
+    position: unset;
+  }
+
+  option:hover{
+    background: rgb(85, 130, 253);
+    font-weight:bold;
   }

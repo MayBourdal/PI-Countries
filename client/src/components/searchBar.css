@@ -1,6 +1,4 @@
 input{
-    
-  background-image: linear-gradient(to bottom, rgb(18, 15, 247), #94d9ee);
     border-radius: 28px;
     text-shadow: 3px 2px 1px #9daef5;
     box-shadow: 6px 5px 24px #666666;
@@ -12,9 +10,13 @@ input{
     right: 300px;
     top: 250px;
     position: unset;
+    border-left-width: medium;
+    background: local;
+    border: ridge;
   
   }
 
   input:hover{
-    background: rgb(85, 130, 253);
+    background-image: linear-gradient(to bottom, rgb(119, 119, 119), #121313);
+    font-weight:bold;
   }

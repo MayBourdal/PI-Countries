@@ -9,12 +9,12 @@ export default function Paginado({countriesPerPage, allCountries, paginado}) {
         
     }
     return(
-        <section class="paginacion">
+        <section className="paginacion">
             <ul>
                 { pageNumber && 
                 pageNumber.map(number => (
                     <li href = 'number' key={number}>
-                    <a href='!#' onClick = {() => paginado(number)}> {number}</a>
+                    <a onClick = {() => paginado(number)}> {number}</a>
                     </li>
                 ))}
             </ul>

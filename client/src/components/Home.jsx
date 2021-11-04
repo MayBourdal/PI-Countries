@@ -36,9 +36,9 @@ export default function Home (){
         <h1>Countries</h1>
         <SearchBar />
         <Order />
-        <button onClick={e => {handleOnclick(e)}}>All</button>
+        <input type= 'submit' value = 'All' className={style.button} onClick={e => {handleOnclick(e)}}/>
         {currentCountries?.map((country) => {
-            return <Country className={style.card} key = {country.id} name={country.name} continent={country.continent} flag={country.flag} id={country.id}/>
+            return <Country key = {country.id} name={country.name} continent={country.continent} flag={country.flag} id={country.id}/>
         })}
         <Paginado
         countriesPerPage = {countriesPerPage}

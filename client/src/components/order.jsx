@@ -16,13 +16,13 @@ export default function Order(){
       console.log(e.target.value)
     }
 
-    return <div>
+
+    return <div >
     <select name="select" onChange={onSelectChange}>
     <option value={ASCENDING} > ASCENDING </option>
     <option value={DESCENDING} > DESCENDING </option> 
     </select>
     <select name = 'select' onChange={handleFilterCountinent}>
-    {/* <option value = "All">ALL</option> */}
      <option value = "Asia">ASIA</option>
      <option value = "North America">NORTH AMERICA</option>
      <option value = "South America">SOUTH AMERICA</option>

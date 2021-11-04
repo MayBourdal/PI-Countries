@@ -5,8 +5,9 @@
   background-position: center center;
   background-size: cover;
   background-attachment: fixed;
+  text-decoration: none;
 }
-
+/* 
 .App-logo {
   height: 40vmin;
   pointer-events: none;
@@ -18,20 +19,7 @@
   }
 }
 
-/* .App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: block;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-} */
 
-.App-link {
-  color: #61dafb;
-}
 
 @keyframes App-logo-spin {
   from {
@@ -47,4 +35,4 @@ switch{
     background-repeat: no-repeat;
     background-position: center;
     background-size:100% auto;
-}
+} */

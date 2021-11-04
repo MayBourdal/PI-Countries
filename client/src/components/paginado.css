@@ -16,7 +16,7 @@
 	display:block;
 	padding:10px 10px;
 	color:#fff;
-	background: rgb(85, 18, 243);
+	background-image: linear-gradient(to bottom, rgb(119, 119, 119), #121313) ;
 	text-decoration: none;
     border-radius: 28px;
 }
