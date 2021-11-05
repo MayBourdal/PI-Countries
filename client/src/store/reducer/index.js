@@ -28,7 +28,7 @@ export default function reducer (state = initialState, action) {
                 if(a.name < b.name) {
                     return action.payload === ASCENDING ? -1 : 1
                 }
-                if(a.name < b.name){
+                if(a.name > b.name){
                     return action.payload === ASCENDING ? 1 : -1
                 }
                 return 0;

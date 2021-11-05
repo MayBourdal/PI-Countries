@@ -34,6 +34,6 @@ export default function CountryDetails (){
             </> :
             <div>loading</div>
         } 
-        <Link to= '/home'><button className={style.button}>Return</button></Link>
+        <Link to= '/home'><button className={style.button}>back to home</button></Link>
          </div>
 }

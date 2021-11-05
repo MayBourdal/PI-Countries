@@ -6,6 +6,7 @@ import Paginado from "./paginado"
 import SearchBar from "./searchBar"
 import Order from "./order"
 import style from './Home.module.css'
+import { Link } from "react-router-dom"
 
 
 export default function Home (){
@@ -34,6 +35,7 @@ export default function Home (){
     return ( 
     <div>
         <h1>Countries</h1>
+        <Link to='/add'><button className={style.button}>add activities</button></Link>
         <SearchBar />
         <Order />
         <input type= 'submit' value = 'All' className={style.button} onClick={e => {handleOnclick(e)}}/>

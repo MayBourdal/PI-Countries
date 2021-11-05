@@ -2,8 +2,7 @@ import { Link } from "react-router-dom";
 import style from './country.module.css'
 
 export default function Country ({id, name, flag, continent}){
-    console.log(id)
-    console.log(continent)
+    
     return <div className={style.card}> 
 
         <Link to={`/id/${id}`}>
