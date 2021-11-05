@@ -14,7 +14,12 @@ module.exports = (sequelize) => {
       type: DataTypes.STRING,
       allowNull: false,
     },
-    difficulty: {
+    physicalDifficulty: {
+      type: DataTypes.ENUM("1","2","3","4","5"),
+      allowNull: false,
+    },
+  
+    technicalDifficulty: {
       type: DataTypes.ENUM("1","2","3","4","5"),
       allowNull: false,
     },

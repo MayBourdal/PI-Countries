@@ -15,12 +15,14 @@ router.get('/', async (req, res, next) =>{
 
 router.post('/', async (req, res, next) =>{
     try{
-        const {name, difficulty, duration, season, countryId} = req.body;
+        const {name, physicalDifficulty, technicalDifficulty, duration, season, countryId} = req.body;
         const newActivity = await Activity.create({
             name, 
-            difficulty, 
+            physicalDifficulty,
+            technicalDifficulty, 
             duration, 
-            season
+            season,
+        
         })
         if(countryId)
         await newActivity.addCountry(countryId)
