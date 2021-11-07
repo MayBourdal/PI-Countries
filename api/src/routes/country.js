@@ -1,6 +1,6 @@
 const { Router } = require('express');
 const { conn } = require('../db');
-const {Country} = conn.models;
+const {Country, Activity} = conn.models;
 const {Op} =require('sequelize')
 
 const router = Router();
@@ -15,7 +15,8 @@ router.get('/', (req, res, next) =>{
                 name: {
                 [Op.iLike]:`%${req.query.name}%`
                 }
-            }
+            },
+            include:{ model: Activity}
         })
         .then(country => {
             if(country.length === 0){
@@ -25,7 +26,8 @@ router.get('/', (req, res, next) =>{
         })
     }else{
         return Country.findAll({
-            attributes : ['flag', 'name', 'continent', 'id']
+            attributes : ['flag', 'name', 'continent', 'id'],
+            include:{ model: Activity}
         })
         .then(country => {
             res.send(country)
@@ -36,7 +38,12 @@ router.get('/', (req, res, next) =>{
 router.get('/:id/', async (req, res, next) => {
     try{
         const {id} = req.params;
-        const country = await Country.findByPk(id)
+        const country = await Country.findAll({
+            where:{
+                id:id,
+            },
+            include:{model: Activity}
+        })
         res.send(country)
     }catch(error){
         next(error)
@@ -45,7 +52,7 @@ router.get('/:id/', async (req, res, next) => {
 
 router.post('/', async (req, res, next) =>{
     try{
-        const {name, flag, continent, capital, subregion, area, population, id} = req.body;
+        const {name, flag, continent, capital, subregion, area, population, id, activity } = req.body;
         const newCountry = await Country.create({
             id,
             name, 
@@ -54,7 +61,8 @@ router.post('/', async (req, res, next) =>{
             capital, 
             subregion, 
             area, 
-            population
+            population,
+            activity
         })
         res.status(201).send(newCountry)
     }catch (error){
@@ -70,7 +78,8 @@ router.get('/', (req, res, next) =>{
                 name: {
                 [Op.iLike]:`%${req.query.name}%`
                 }
-            }
+            },
+            include:{ model: Activity}
         })
         .then(country => {
             if(country.length === 0){
@@ -80,7 +89,8 @@ router.get('/', (req, res, next) =>{
         })
     }else{
         return Country.findAll({
-            attributes :  ['name', 'image', 'continent', 'capital', 'subregion', 'area', 'population']
+            attributes :  ['name', 'image', 'continent', 'capital', 'subregion', 'area', 'population'],
+            include:{ model: Activity}
         })
         .then(country => {
             res.send(country)
