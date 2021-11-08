@@ -1,12 +1,20 @@
 const { Router } = require('express');
 const { conn } = require('../db');
-const {Activity} = conn.models;
+const {Activity, Country, countryxactivity} = conn.models;
+
 
 const router = Router();
 
 router.get('/', async (req, res, next) =>{
     try{
-        const newActivity = await Activity.findAll()
+        const newActivity = await Activity.findAll({
+            include: [
+              {
+                model: Country,
+                through: "countryxactivity",
+              },
+            ],
+          })
           res.send(newActivity)
     }catch(error){
         next(error)
