@@ -2,4 +2,51 @@
     font-size: 1.5em;
     color: peru;
     margin-block: auto;
+    text-align-last: center;
+    margin: 4px 0px 7px 0px;
 }
+
+.img{
+    display: inline;
+}
+
+.h1{
+    font-size: 4em;
+    color: peru;
+    margin-block: auto;
+}
+
+.h3{
+    margin: 24px 6px 0px -1px;
+}
+
+.select{
+    margin: 4px 0px -5px 0px;
+}
+
+.button{
+    background-image: linear-gradient(to bottom, rgb(119, 119, 119), #121313) ;
+    border-radius: 28px;
+    text-shadow: 3px 2px 1px #9daef5;
+    box-shadow: 6px 5px 24px #666666;
+    font-family: cursive;
+    font-style: oblique;
+    font-size: 0.8em;
+    color: #fafafa;
+    padding: 8px;
+    right: 300px;
+    top: 250px;
+    position: unset;
+    border-left-width: medium;
+    display: block;
+    border: none;
+  }
+
+  .button:hover{
+    background: rgb(85, 130, 253);
+    font-weight:bold;
+  }
+
+  .link{
+      text-decoration: none;
+  }

@@ -1,5 +1,4 @@
 export const ASCENDING = 'ascending'
 export const DESCENDING = 'descending'
-
-
-export const activity = 'activity'
+export const HIGHEST = 'highest'
+export const LOWER = 'lower'

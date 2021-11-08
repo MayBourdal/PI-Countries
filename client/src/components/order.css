@@ -8,10 +8,11 @@ select{
     font-style: oblique;
     font-size: 1em;
     color: #fafafa;
-    padding: 4px;
+    padding: 5px;
     right: 300px;
     top: 250px;
     position: unset;
+    margin: 13px 6px 11px 2px;
   }
 
   select:hover{

@@ -1,16 +1,19 @@
 import { useEffect, useState } from "react"
 import { useDispatch, useSelector } from "react-redux"
-import {fetchCountry} from '../store/action'
+import {fetchActivity, fetchCountry} from '../store/action'
 import Country from "./country"
 import Paginado from "./paginado"
 import SearchBar from "./searchBar"
 import Order from "./order"
 import style from './Home.module.css'
 import { Link } from "react-router-dom"
+import Activities from './Activities'
+
 
 
 export default function Home (){
     let allCountries = useSelector((state) => state.filterCountries)
+    let allActivities = useSelector((state) => state.activity)
     let dispatch = useDispatch()
     let [currentPage, setCurrentPage] = useState(1) //guardo en un estados local la pag actual 
     let [countriesPerPage]= useState(9) //guardo cuantos personajes quiero por pag
@@ -23,24 +26,28 @@ export default function Home (){
     }
 
     useEffect (() => {
-        dispatch(fetchCountry())
+        dispatch(fetchCountry(), fetchActivity())
     }, [dispatch])
 
+
+    
     function handleOnclick(e){
         e.preventDefault();
         dispatch(fetchCountry())
     }
-
+     
+    
     
     return ( 
     <div>
-        <h1>Countries</h1>
-        <Link to='/add'><button className={style.button}>add activities</button></Link>
+        <Link to='/add' className={style.rayita}><button className={style.button}>Create activity</button></Link>
+        <h1 className={style.h1}>Countries</h1>
         <SearchBar />
         <Order />
-        <input type= 'submit' value = 'All' className={style.button} onClick={e => {handleOnclick(e)}}/>
+        <input type= 'submit' value = 'All Country' className={style.button} onClick={e => {handleOnclick(e)}}/>
         {currentCountries?.map((country) => {
-            return <Country key = {country.id} name={country.name} continent={country.continent} flag={country.flag} id={country.id}/>
+            return <Country key = {country.id} name={country.name} continent={country.continent} flag={country.flag} id={country.id} 
+           />
         })}
         <Paginado
         countriesPerPage = {countriesPerPage}

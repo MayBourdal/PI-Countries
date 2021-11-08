@@ -5,7 +5,7 @@ import './landPage.css';
 
 export default function LandingPage(){
     return(
-        <div>
+        <div className>
             <h1>Welcome to my page</h1>
             <h1 className = 'dream'>One dream at a time...</h1>
             <Link to = '/Home'>

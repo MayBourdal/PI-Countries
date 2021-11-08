@@ -5,15 +5,12 @@
     box-shadow: 6px 5px 24px #666666;
     font-family: cursive;
     font-style: oblique;
-    font-size: 1em;
+    font-size: 0.8em;
     color: #fafafa;
-    padding: 4px;
-    right: 300px;
-    top: 250px;
-    position: unset;
+    padding: 8px;
     border-left-width: medium;
     display: block;
-
+    border: none;
   }
 
   .button:hover{
@@ -21,3 +18,13 @@
     font-weight:bold;
   }
 
+  .h1{
+    color: peru;
+    font-size: 7em;
+    margin: 0px 0px 22px 0px;
+    font-variant: petite-caps;
+  }
+
+  .rayita{
+    text-decoration: none;
+  }

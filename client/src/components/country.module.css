@@ -1,21 +1,21 @@
 .card{
     overflow: hidden;
-    width: 200px;
-    background: bottom;
+    width: 233px;
+    height: 210px;
     display: inline-flex;
-    justify-content: center;
-    align-content: space-between;
-    flex-wrap: wrap;;
+    align-content: center;
+    flex-wrap: wrap;
     flex-direction: column;
-    align-items: baseline;
+    align-items: center;
     font-size: small;
-    padding: 20px 15px 20px 15px;
-    margin: 20px 30px 40px 10px;
-    background-image: linear-gradient(to bottom, rgb(119, 119, 119), #121313) ;
+    padding: 19px 23px 31px 23px;
+    margin: 13px 6px 11px 2px;
+    background-color:rgb(8, 8, 8, 0.7);
     opacity: 0.9;
-    box-shadow: 6px 5px 24px #666666;
+    box-shadow: 6px 5px 24px #c5c5e1;
     border-radius: 33px;
     cursor: grab;
+    text-decoration: none
 
 }
 
@@ -23,33 +23,26 @@
     border-radius: 28px;
     height: 100px;
     width: 120px;
+    text-decoration: none
 }
 
  .h1{
-    color:ivory;
+    color:peru;
     text-decoration: none;
-    left: 70px;
     text-align: initial;
     font-family: cursive;
     font-size: x-large;
     display: inline;
-    margin-inline-start: 50px;
-    margin-inline-end: 15px;
     font-weight: initial;
+    
 }
 
 .h3{
-    color: ivory;
+    color: peru;
     text-decoration: none;
-    left: 70px;
-    text-align: initial;
-    font-family: cursive;
-    font-size: initial;
-    display: block;
-    margin-block-start: 2em;
-    margin-block-end: 3em;
-    margin-inline-start: 45px;
-    margin-inline-end: 100px;
-    font-weight: initial;
-    
+    font-family: cursive; 
+}
+
+.rayita{
+    text-decoration: none;
 }
