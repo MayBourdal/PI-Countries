@@ -1,3 +1,46 @@
+.h1{
+    font-size: 4em;
+    color: peru;
+    
+}
+
+.button{
+    background-image: linear-gradient(to bottom, rgb(119, 119, 119), #121313) ;
+    border-radius: 28px;
+    text-shadow: 3px 2px 1px #9daef5;
+    box-shadow: 6px 5px 24px #666666;
+    font-family: cursive;
+    font-style: oblique;
+    font-size: 1.5em;
+    color: #fafafa;
+    padding: 8px;
+    right: 637px;
+    top: 250px;
+    position: fixed;
+    border-left-width: medium;
+    display: block;
+    border: none;
+  }
+
+  .button:hover{
+    background: rgb(85, 130, 253);
+    font-weight:bold;
+  }
+
+  .link{
+      text-decoration: none;
+      
+  }
+
+  .h3{
+    margin: 24px 6px 0px -1px;
+    color: peru;
+    text-align: center;
+}
+
+
+
+
 /* h1{
     font-family: cursive;
     text-align: start;

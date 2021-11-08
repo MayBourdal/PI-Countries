@@ -29,8 +29,8 @@ export default function Order(){
     }
 
     return <div >
+      <h3>Filter by order:</h3>
     <select name="select" onChange={onSelectChange}>
-      <h4>orden alfavetico</h4>
     <option value={ASCENDING} > ASCENDING </option>
     <option value={DESCENDING} > DESCENDING </option> 
     </select>

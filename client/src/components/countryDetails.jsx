@@ -24,8 +24,9 @@ export default function CountryDetails (){
             country ?
             <>
             <Link to= '/home' ><button className={style.button}>back to home</button></Link>
-            <h1 className={style.h1}>{country[0].name}</h1>
+            <h1 className={style.h1}>{country[0].name} </h1>
             <img className={style.flag}  src={country[0].flag} alt='flag' />
+            <h3 className = {style.h3}>Country Id: {id}</h3>
             <h3 className={style.h3}>Continent: {country[0].continent}</h3>
             <h3 className={style.h3}>Capital: {country[0].capital}</h3>
             <h3 className={style.h3}>Subregion: {country[0].subregion}</h3>

@@ -39,3 +39,8 @@ option{
     background: rgb(85, 130, 253);
     font-weight:bold;
   }
+
+  h3{
+    margin: 24px 6px 0px -1px;
+    color:peru
+  }

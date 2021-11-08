@@ -7,28 +7,37 @@ import { useHistory } from "react-router"
 
 function validate(country){
     let error ={};
-    if(country.countryId){
+    if(!country.countryId){
         error.countryId = 'select country'
-    }else if(country.name){
+    }else if(!country.name){
         error.name = ' select activity'
-    }else if(country.duration){
+    }else if(!country.duration){
         error.duration = 'select duration'
     }
-    else if(country.season){
+    else if(!country.season){
         error.season = 'select season'
+    }
+    else if(!country.physicalDifficulty){
+        error.season = 'select Physical Difficulty'
+    }
+    else if(!country.technicalDifficulty){
+        error.season = 'select Technical Difficulty'
     }
     return error;
 }
 
+
+  
 
 export default function AddActivities(){
     let dispatch = useDispatch()
     let history = useHistory()
     let allCountries = useSelector((state) => state.filterCountries)
     const [error, setError] = useState({})
+    const [disable, setDisable] = useState(false);
 
     const [country, setCountry] = useState({
-        countryId: "",
+        countryId: [],
         name : "",
         physicalDifficulty: "",
         technicalDifficulty: "",
@@ -47,20 +56,19 @@ export default function AddActivities(){
         })
         setError(validate({
             ...country,
-            [e.target.name] : e.target.value
+            [e.target.name] : e.target.value,
         }))
     }
 
-    // function handleSelect(e){
-    //     setCountry({
-    //         ...country,
-    //         activity :[...country, e.target.value]
+    function handleSelect(e){
+        setCountry({
+            ...country,
+            countryId :[...country.countryId, e.target.value]
 
-    //     })
-    // }
+        })
+    }
 
         function onSubmit(e){
-        console.log(country)
         e.preventDefault()  
         dispatch(postActivity(country))
         alert('Your activity was successfully created')
@@ -75,6 +83,7 @@ export default function AddActivities(){
         })
         history.push('/home')
     }
+    
 
     useEffect(() => {
         dispatch(getActivity());
@@ -87,13 +96,15 @@ export default function AddActivities(){
         <form onSubmit={onSubmit}>
             <div >
             <h3 className={style.h3}>Name Country</h3>
-            <select className={style.select} name='countryId' onChange={onInputChange} value={country.countryId}>
-            {allCountries?.map((country) =>{
+            <select className={style.select} name='countryId' onChange={handleSelect} value={country.countryId} >
+                <opcion key={-1}>Select country </opcion>
+            {allCountries?.map((country, i) =>{
                 return( 
-            <option value={country.id} key={country.id}>{country.name}</option>)
+            <option value={country.id} key={i}>{country.name}</option>)
         })}
-            {error.countryId && (<option>{error.countryId} </option>)}
+            {error.countryId && (<p>{error.countryId} </p>)}
             </select>
+            <h4>{country.countryId.map(el => el + ' ,')}</h4>
         </div>
         
         <div >
@@ -118,6 +129,7 @@ export default function AddActivities(){
                 <option value="National Parks">National Parks</option> 
                 <option value="Thermal Centers">Thermal Centers</option> 
                 <option value="Adventure Turism">Adventure Turism</option> 
+                {error.name && (<option>{error.name} </option>)}
                 </select>
         </div>
         
@@ -130,6 +142,7 @@ export default function AddActivities(){
                 <option value = "3">3 hour</option>
                 <option value = "4">4 hour</option>
                 <option value = "5">more than 5 hours</option>
+                {error.duration && (<option>{error.duration} </option>)}
             </select>
         </div>
         
@@ -141,6 +154,7 @@ export default function AddActivities(){
                 <option value = "3">3-Medium</option>
                 <option value = "4">4-High</option>
                 <option value = "5">5-Professional</option>
+                {error.physicalDifficulty && (<option>{error.physicalDifficulty} </option>)}
             </select>
         </div>
 
@@ -152,6 +166,7 @@ export default function AddActivities(){
                 <option value = "3">3-Medium</option>
                 <option value = "4">4-High</option>
                 <option value = "5">5-Professional</option>
+                {error.technicalDifficulty && (<option>{error.technicalDifficulty} </option>)}
             </select>
         </div>
 
@@ -162,16 +177,14 @@ export default function AddActivities(){
                     <option value = "Summer">Summer</option>
                     <option value = "Fall">Fall</option>
                     <option value = "Winter">Winter</option>
+                    {error.season && (<option>{error.season} </option>)}
                 </select> 
         </div>    
-        <input className={style.button} type='submit' onClick={onSubmit} />
+        <input className={style.button} type='submit' onClick={onSubmit} onChange={onInputChange} disabled={!country.name || !country.countryId || !country.technicalDifficulty || !country.physicalDifficulty || !country.season || !country.duration } />
        
     </form>
     </div>
-    )
-    
-    
-    
+    )   
 }
 
 
