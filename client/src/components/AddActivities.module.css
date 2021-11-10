@@ -50,3 +50,17 @@
   .link{
       text-decoration: none;
   }
+
+  .x{
+    background-image: linear-gradient(to bottom, rgb(119, 119, 119), #121313) ;
+    font-family: cursive;
+    font-style: oblique;
+    color: #fafafa;
+    margin: 11px 0px 0px 0px;
+  }
+
+  .x:hover{
+    background: rgb(85, 130, 253);
+    font-weight:bold;
+  }
+  

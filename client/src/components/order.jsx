@@ -8,9 +8,6 @@ import './order.css'
 export default function Order(){
     const dispatch = useDispatch()
 
-  //   useEffect(() => {
-  //     dispatch(handleFilterActivity());
-  // }, []);
     
     function onSelectChange(e){
         dispatch(sort(e.target.value))
@@ -44,7 +41,7 @@ export default function Order(){
      <option value = "South America">SOUTH AMERICA</option>
      <option value = "Africa">AFRICA</option>
      <option value = "Antarctica">ANTARTIDA</option>
-     <option value = "Oceania">OSEANIA</option>
+     <option value = "Oceania">OCEANIA</option>
      <option value = "Europe">EUROPE</option> 
     </select>
     <select name = 'select' onChange={handleFilterActivity} >

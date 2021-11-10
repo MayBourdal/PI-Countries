@@ -4,16 +4,20 @@
     
 }
 
-.button{
-    background-image: linear-gradient(to bottom, rgb(119, 119, 119), #121313) ;
-    border-radius: 28px;
+.boton{
+    /* background-image: linear-gradient(to bottom, rgb(119, 119, 119), #121313) ; */
+    background-image: url(https://thumbs.gfycat.com/DistortedCompetentAzurevasesponge-size_restricted.gif);
+    /* background-image: url('https://static.wixstatic.com/media/4ec581_080455ea6a8c430880e831d6b9bcc093~mv2.gif'); */
+    background-repeat: no-repeat;
+    background-position: center;
+    border-radius: 135px;
     text-shadow: 3px 2px 1px #9daef5;
     box-shadow: 6px 5px 24px #666666;
     font-family: cursive;
     font-style: oblique;
     font-size: 1.5em;
     color: #fafafa;
-    padding: 8px;
+    padding: 72px;
     right: 637px;
     top: 250px;
     position: fixed;
@@ -22,8 +26,8 @@
     border: none;
   }
 
-  .button:hover{
-    background: rgb(85, 130, 253);
+  .boton:hover{
+    background-image: url(https://thumbs.gfycat.com/DistortedCompetentAzurevasesponge-size_restricted.gif);
     font-weight:bold;
   }
 
@@ -38,7 +42,10 @@
     text-align: center;
 }
 
-
+.div{
+    display: flex;
+    justify-content: center;
+}
 
 
 /* h1{

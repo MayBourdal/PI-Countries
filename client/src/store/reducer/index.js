@@ -23,7 +23,7 @@ export default function reducer (state = initialState, action) {
                 filterCountries: action.payload
             }
         case SORT:
-            let orderCountries = [...state.countries]
+            let orderCountries = [...state.filterCountries]
             orderCountries.sort((a, b) =>{
                 if(a.name < b.name) {
                     return action.payload === ASCENDING ? -1 : 1
@@ -31,6 +31,7 @@ export default function reducer (state = initialState, action) {
                 if(a.name > b.name){
                     return action.payload === ASCENDING ? 1 : -1
                 }
+                
                 return 0;
             })
             return{
@@ -38,7 +39,7 @@ export default function reducer (state = initialState, action) {
                 filterCountries: orderCountries
             }
             case FILTER_COUNTRY_BY_CONTINENT:
-                const allCountries = [...state.countries]
+                const allCountries = [...state.filterCountries]
                 const continentFilter = allCountries.filter(el => el.continent == action.payload)   
             return{
                 ...state,
@@ -50,10 +51,10 @@ export default function reducer (state = initialState, action) {
                     ...state
                 }
             case FILTER_COUNTRY_BY_ACTIVITY:
-                console.log('entre' ,action.payload)
-                const countriesAll = state.countries
+                
+                const countriesAll = [...state.filterCountries]
                 const activitys = []
-                console.log('soy countries',countriesAll)
+                
                 const minu=action.payload.toLowerCase()
                 const activityFilter = countriesAll.filter((el) =>{
                     for (let k = 0; k < el.activities?.length ; k++) {
@@ -75,7 +76,7 @@ export default function reducer (state = initialState, action) {
                     activity:[...state.activity, action.payload]
                 } 
             case FILTER_COUNTRY_BY_POPULATION:
-            let orderPopulation = [...state.countries]
+            let orderPopulation = [...state.filterCountries]
             orderPopulation.sort((a, b) =>{
                 if(a.population < b.population) {
                     return action.payload === LOWER ? -1 : 1
@@ -90,20 +91,6 @@ export default function reducer (state = initialState, action) {
                 filterCountries: orderPopulation
             }
         
-//            
-           
-//             const ActFilter = action.payload === activitys?activitys:activitys.map(el => el.name)
-//             const noLoop = ActFilter.reduce((a, e) => {
-//                 if(!a.find(d => d == e)) {
-//                     a.push(e)
-//                 }
-//                 return a;
-//             }, [])      
-                
-//             return {
-//                         ...state,
-//                         activities: noLoop
-//                     }
             
             default:
                 return state;

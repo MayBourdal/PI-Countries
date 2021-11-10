@@ -1,6 +1,6 @@
-import { useEffect, useState } from "react"
+import { useState } from "react"
 import { useDispatch, useSelector } from "react-redux"
-import {fetchActivity, fetchCountry} from '../store/action'
+import {fetchCountry} from '../store/action'
 import Country from "./country"
 import Paginado from "./paginado"
 import SearchBar from "./searchBar"
@@ -24,9 +24,7 @@ export default function Home (){
         setCurrentPage(pageNumber)
     }
 
-    useEffect (() => {
-        dispatch(fetchCountry(), fetchActivity())
-    }, [dispatch])
+    
 
 
     
@@ -40,7 +38,7 @@ export default function Home (){
     return ( 
     <div>
         <Link to='/add' className={style.rayita}><button className={style.button}>Create activity</button></Link>
-        <h1 className={style.h1}>Countries</h1>
+        <h1 className={style.h1}>Countries </h1>
         <SearchBar />
         <Order />
         <input type= 'submit' value = 'All Country' className={style.button} onClick={e => {handleOnclick(e)}}/>

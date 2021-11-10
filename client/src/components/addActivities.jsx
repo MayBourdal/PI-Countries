@@ -1,8 +1,8 @@
-import { useState, useEffect } from "react"
+import { useState} from "react"
 import { useDispatch, useSelector } from 'react-redux'
 import style from './AddActivities.module.css'
 import { Link } from "react-router-dom"
-import { getActivity, postActivity } from "../store/action"
+import { postActivity } from "../store/action"
 import { useHistory } from "react-router"
 
 function validate(country){
@@ -32,9 +32,9 @@ function validate(country){
 export default function AddActivities(){
     let dispatch = useDispatch()
     let history = useHistory()
-    let allCountries = useSelector((state) => state.filterCountries)
+    let allCountries = useSelector((state) => state.countries)
     const [error, setError] = useState({})
-    const [disable, setDisable] = useState(false);
+
 
     const [country, setCountry] = useState({
         countryId: [],
@@ -61,11 +61,23 @@ export default function AddActivities(){
     }
 
     function handleSelect(e){
+        let existe=country.countryId.includes(e.target.value)
+        if(!existe){
+            setCountry({
+                ...country,
+                countryId :[...country.countryId, e.target.value]
+    
+            })
+        }
+
+    }
+
+    function handleDelete(el){
         setCountry({
             ...country,
-            countryId :[...country.countryId, e.target.value]
-
+            countryId: country.countryId.filter( id => id !== el)
         })
+            
     }
 
         function onSubmit(e){
@@ -84,12 +96,9 @@ export default function AddActivities(){
         history.push('/home')
     }
     
-
-    useEffect(() => {
-        dispatch(getActivity());
-    }, []);
     
     return (
+        
         <div className={style.div}>
             <Link className={style.link} to= '/home'><button className={style.button}>back to home</button></Link>
             <h1 className={style.h1}>Create Activity</h1>
@@ -103,11 +112,17 @@ export default function AddActivities(){
             <option value={country.id} key={i}>{country.name}</option>)
         })}
             {error.countryId && (<p>{error.countryId} </p>)}
+            
             </select>
-            <h4>{country.countryId.map(el => el + ' ,')}</h4>
-        </div>
+            <div>
+    {country.countryId.map((el) => 
+        (<div >
+
+            <button className={style.x} onClick={(e)=>handleDelete(el)}>X {el}</button>
+        </div>)
+     )}
+    </div>
         
-        <div >
             <h3 className={style.h3}>Activity Name:</h3>
                 <select className={style.select} name='name' onChange={onInputChange} value={country.name}>
                 <option value="Eco Tourism">Eco Tourism</option>
@@ -183,8 +198,12 @@ export default function AddActivities(){
         <input className={style.button} type='submit' onClick={onSubmit} onChange={onInputChange} disabled={!country.name || !country.countryId || !country.technicalDifficulty || !country.physicalDifficulty || !country.season || !country.duration } />
        
     </form>
+    
+    
+
     </div>
     )   
+
 }
 
 

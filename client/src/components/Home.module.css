@@ -19,6 +19,7 @@
   }
 
   .h1{
+    
     color: peru;
     font-size: 7em;
     margin: 0px 0px 22px 0px;
@@ -28,3 +29,23 @@
   .rayita{
     text-decoration: none;
   }
+
+  /* .h1img{
+    background-image: url(https://thumbs.gfycat.com/DistortedCompetentAzurevasesponge-size_restricted.gif);
+    background-repeat: no-repeat;
+    background-position: center;
+    border-radius: 135px;
+    text-shadow: 3px 2px 1px #9daef5;
+    box-shadow: 6px 5px 24px #666666;
+    font-family: cursive;
+    font-style: oblique;
+    font-size: 1.5em;
+    color: #fafafa;
+    padding: 72px;
+    right: 637px;
+    top: 250px;
+    position: fixed;
+    border-left-width: medium;
+    display: block;
+    border: none;
+  } */
